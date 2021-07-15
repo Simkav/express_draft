@@ -10,6 +10,7 @@ app.use(compression())
 app.use(cors())
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(express.static('./static', { extensions: ['html'] }))
 
 app.get('/', (req, res, next) => {
   res.status(200).end('Bye')
